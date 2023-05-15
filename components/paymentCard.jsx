@@ -12,7 +12,7 @@ function Card() {
     const priceTag = price - 50
     const divOne = ()=>{
         setPrice(179)
-        setDiscountPrice(priceTag)
+        setDiscountPrice(179 - 50)
         setBtnOne(true)
         setBtnTwo(false)
         setBtnThree(false)
@@ -25,7 +25,7 @@ function Card() {
         setBtnTwo(true)
         setBtnThree(false)
         setBtnOne(false)
-        setDiscountPrice(priceTag)
+        setDiscountPrice(149 - 50)
         console.log(discountPrice)
     }
     const divThree = ()=>{
@@ -34,7 +34,7 @@ function Card() {
         setBtnOne(false)
         setBtnTwo(false)
         
-        setDiscountPrice(priceTag)
+        setDiscountPrice(99 - 50)
         console.log(discountPrice)
     }
 
