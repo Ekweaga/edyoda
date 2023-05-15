@@ -7,27 +7,36 @@ function Card() {
     const [btnThree,setBtnThree] = useState(false)
     const [price,setPrice] = useState(0)
     const [discountPrice,setDiscountPrice] = useState(0)
-
+   
+    
     const divOne = ()=>{
+        setPrice(179)
+      
+        setDiscountPrice(179 - 50)
         setBtnOne(true)
         setBtnTwo(false)
         setBtnThree(false)
-        setPrice(179)
-        setDiscountPrice(price-50)
+        console.log(discountPrice)
+        
+       
     }
     const divTwo = ()=>{
+        setPrice(149)
         setBtnTwo(true)
         setBtnThree(false)
         setBtnOne(false)
-        setPrice(149)
-        setDiscountPrice(price-50)
+       
+       
+        setDiscountPrice(149 -50)
     }
     const divThree = ()=>{
+        setPrice(99)
         setBtnThree(true)
         setBtnOne(false)
         setBtnTwo(false)
-        setPrice(99)
-        setDiscountPrice(price-50)
+        
+        setDiscountPrice(99 - 50)
+        console.log(discountPrice)
     }
 
     const calc = () =>{
