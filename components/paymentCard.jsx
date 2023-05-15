@@ -1,18 +1,18 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import Image from "next/image"
 
 function Card() {
     const [btnOne,setBtnOne] = useState(false)
     const [btnTwo,setBtnTwo] = useState(false)
     const [btnThree,setBtnThree] = useState(false)
-    const [price,setPrice] = useState(0)
+    const [price,setPrice] = useState(null)
     const [discountPrice,setDiscountPrice] = useState(0)
    
     
+    const priceTag = price - 50
     const divOne = ()=>{
         setPrice(179)
-      
-        setDiscountPrice(179 - 50)
+        setDiscountPrice(priceTag)
         setBtnOne(true)
         setBtnTwo(false)
         setBtnThree(false)
@@ -25,9 +25,8 @@ function Card() {
         setBtnTwo(true)
         setBtnThree(false)
         setBtnOne(false)
-       
-       
-        setDiscountPrice(149 -50)
+        setDiscountPrice(priceTag)
+        console.log(discountPrice)
     }
     const divThree = ()=>{
         setPrice(99)
@@ -35,14 +34,18 @@ function Card() {
         setBtnOne(false)
         setBtnTwo(false)
         
-        setDiscountPrice(99 - 50)
+        setDiscountPrice(priceTag)
         console.log(discountPrice)
     }
 
     const calc = () =>{
         const totalPrice = (18/100) * discountPrice
-        return totalPrice
+        return totalPrice + discountPrice
     }
+
+    useEffect(()=>{
+
+    })
   return (
     <div>
         <div className='bg-white md:w-[500px] rounded-md text-black p-3 md:mt-[200px] pb-8 w-[360px] mt-[100px]'>
